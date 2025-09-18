@@ -6,7 +6,7 @@
 /*   By: ergamboa <ergamboa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 17:33:46 by ergamboa          #+#    #+#             */
-/*   Updated: 2025/09/17 17:45:42 by ergamboa         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:28:28 by ergamboa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_printf(const char *format, ...)
 			format++;               // avança para o especificador
 			if (*format == '\0')    // se a string termina com '%'
 				break;              // evita ler além do '\0'
-			count += ft_handle_format(*format, &args);
+			count += ft_handle_format(*format, args);
 		}
 		else
 		{
@@ -44,4 +44,13 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+int	main()
+{
+	char	c;
+	int		d;
+
+	c = 'a';
+	d = 2;
+	ft_printf("teste de valor de c: %p. e de d: %u. %%% t %%", c, d);
 }
