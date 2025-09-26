@@ -31,10 +31,10 @@ int	ft_print_hex(unsigned long long nbr, char specifier)
 	int	len;
 
 	len = 0;
+	if ((specifier == 'p') && (nbr == 0))
+		return (len + write(1, "(nil)", 5));
 	if (specifier == 'p')
 		len += write(1, "0x", 2);
-	if (nbr == 0)
-		return (len + write(1, "0", 1));
 	len += ft_put_hex(nbr, specifier);
 	return (len);
 }
