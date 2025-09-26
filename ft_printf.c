@@ -19,8 +19,6 @@ int	ft_process_format( const char **format, va_list args)
 	if (**format == '%')
 	{
 		(*format)++;
-		if (**format == '\0')
-			return (write(1, "%", 1));
 		len = ft_handle_format(**format, args);
 	}
 	else
